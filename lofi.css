@@ -1,0 +1,136 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Fundo com imagem escura */
+body {
+    position: relative;
+    background: url("Lofi.jpg") no-repeat center center/cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Antes: rgba(0,0,0,0.9); */
+    background: rgba(0, 0, 0, 0.45); /* menos escuro, imagem mais visível */
+    z-index: 1;
+}
+
+
+/* Imagem canto superior esquerdo */
+.logo-top {
+    position: fixed;
+    top: 0px;      /* Subiu um pouco */
+    left: 10px;    /* Um pouco mais pra direita */
+    width: 300px;  /* Aumentada */
+    height: auto;
+    border-radius: 12px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+/* Botão secreto */
+.secret-button {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ffb3b3;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.secret-button:hover {
+    transform: scale(1.1);
+    background-color: #ff8080;
+}
+
+/* Imagem do botão secreto */
+#secretImageContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none;
+}
+
+#secretImage {
+    max-width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* Calendário fofo estilo quadradinho */
+#calendarContainer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    color: #ffb3b3;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    z-index: 1000;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 30px);
+    grid-gap: 5px;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+#calendar span.day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.1);
+    transition: transform 0.2s, background-color 0.3s;
+    cursor: default;
+}
+
+#calendar span.day:hover {
+    transform: scale(1.2);
+    background-color: rgba(255,77,77,0.8);
+}
+
+#calendar span.highlight {
+    background-color: #ff4d4d;
+    color: white;
+    font-weight: bold;
+}
+
+#daysCounter {
+    font-size: 0.7em;
+    margin-top: 5px;
+}

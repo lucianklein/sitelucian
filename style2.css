@@ -1,0 +1,129 @@
+/* Reset e estilo base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden; /* scroll no container, não no body */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    height: 90vh; /* container ocupa quase toda a altura da tela */
+    background: rgba(0,0,0,0.85);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    overflow-y: auto; /* permite rolagem */
+    animation: fadeIn 1.5s ease-in;
+    padding-bottom: 150px; /* espaço para não cobrir o texto com botões */
+}
+
+/* Estilo do texto */
+.message h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.message p {
+    font-size: 1.2em;
+    line-height: 1.4; /* espaçamento mais compacto */
+    margin: 0;        /* sem margem grande entre parágrafos */
+    padding-bottom: 8px; /* pequeno espaçamento visual */
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .message h1 {
+        font-size: 2em;
+    }
+    .message p {
+        font-size: 1em;
+    }
+}
+
+/* Botões flutuantes */
+.theme-toggle, .music-toggle {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 1001; /* acima do container */
+}
+
+.theme-toggle:hover, .music-toggle:hover {
+    transform: scale(1.1);
+    background-color: #ff1a1a;
+}
+
+/* Posições dos botões */
+.theme-toggle { bottom: 30px; right: 30px; }
+.music-toggle { bottom: 30px; left: 30px; }
+
+/* Botão oval achatado (A C E S S A R) */
+.access-button {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 18px 80px;
+    border: none;
+    border-radius: 50px;
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 1.4em;
+    font-weight: bold;
+    letter-spacing: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 1001;
+    text-transform: uppercase;
+}
+
+.access-button:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.08);
+}
+
+/* Coração animado */
+.heart {
+    position: absolute;
+    font-size: 24px;
+    color: red;
+    animation: floatUp 1.5s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-150px) scale(1.5); opacity: 0; }
+}

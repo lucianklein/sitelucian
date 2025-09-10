@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LucianSite</title>
+    <link rel="stylesheet" href="lofi.css">
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <!-- Imagem canto superior esquerdo -->
+    <img src="Aranha.jpg" alt="Aranha" class="logo-top" id="logoTop">
+
+    <!-- Botão secreto -->
+    <button id="secretButton" class="secret-button">💌</button>
+
+    <!-- Imagem que aparece ao apertar o botão secreto -->
+    <div id="secretImageContainer">
+        <img id="secretImage" src="Surpresa.jpg" alt="Surpresa" />
+    </div>
+
+    <!-- Calendário fofo -->
+    <div id="calendarContainer">
+        <div id="calendar"></div>
+        <div id="daysCounter"></div>
+    </div>
+
+    <!-- Música de fundo -->
+    <audio id="bgMusic" loop>
+        <source src="Lofi.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="Lofi.js"></script>
+</body>
+</html>
